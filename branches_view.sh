@@ -11,7 +11,7 @@ echo "start branches_view.sh"
 display_branches() {
     local prefix="$1"
     local parent_branch="$2"
-    # local branches=()
+    local branches=()
 
     while IFS= read -r branch; do
         branches+=("$branch")
