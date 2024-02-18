@@ -4,7 +4,7 @@
 # cd /path/to/your/git/repo
 
 # Fetch the latest branch information
-git fetch --all
+git fetch --all || exit 1
 
 # Function to recursively display branches with tree-like structure
 display_branches() {
