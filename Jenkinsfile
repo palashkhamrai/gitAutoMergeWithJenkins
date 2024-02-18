@@ -53,7 +53,7 @@ node() {
     		checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: gitRepo]]])
 		sh '''
   			ls -lart
-     			git branch --set-upstream-to=upstream_branch
+     			git show-tree
      		'''
 	}
 	stage('setup') {
