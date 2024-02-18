@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Navigate to the Git repository
-cd /path/to/your/git/repo
+# cd /path/to/your/git/repo
 
 # Fetch the latest branch information
 git fetch --all
