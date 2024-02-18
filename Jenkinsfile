@@ -53,7 +53,7 @@ node() {
     		checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: gitRepo]]])
 		sh '''
   			ls -lart
-     			git show-branch --list --topo-order
+     			git show-branch --list
      		'''
 	}
 	stage('setup') {
