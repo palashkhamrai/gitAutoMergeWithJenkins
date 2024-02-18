@@ -53,7 +53,6 @@ node() {
     		checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: gitRepo]]])
 		sh '''
   			ls -lart
-     			git branch -avv
      		'''
 	}
 	stage('setup') {
@@ -63,7 +62,7 @@ node() {
 		// sh "git log --graph --pretty=oneline --abbrev-commit --branches --tags"
 		sh "env | sort"
 		handleCheckout()
-		sh "git branch -vv"
+		sh "git branch -avv"
 	}
 
 	stage('test') {
