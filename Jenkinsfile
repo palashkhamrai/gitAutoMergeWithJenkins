@@ -48,7 +48,7 @@ def handleCheckout = {
 
 node() {
 	stage('setup') {
-		// sh "git clone https://github.com/palashkhamrai/gitAutoMergeWithJenkins.git"
+		sh "TZ=Asia/Kolkata date"
 		sh "ls -lart"
 		sh "chmod +x branches_view.sh"
 		sh "sh branches_view.sh"
