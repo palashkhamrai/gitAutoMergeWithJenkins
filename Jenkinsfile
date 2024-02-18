@@ -3,7 +3,7 @@
 def handleCheckout = {
 	if (env.gitlabMergeRequestId) {
 		sh "echo 'Merge request detected. Merging…'"
-		def credentialsId = scm.userRemoteConfigs[0].credentialsId
+		// def credentialsId = scm.userRemoteConfigs[0].credentialsId
 		checkout ([
 			$class: 'GitSCM',
 			branches: [[name: "${env.gitlabSourceNamespace}/${env.gitlabSourceBranch}"]],
@@ -21,12 +21,12 @@ def handleCheckout = {
 			],
 			userRemoteConfigs: [
 				[
-					credentialsId: credentialsId,
+					// credentialsId: credentialsId,
 					name: env.gitlabTargetNamespace,
 					url: env.gitlabTargetRepoSshURL
 				],
 				[
-					credentialsId: credentialsId,
+					// credentialsId: credentialsId,
 					name: env.gitlabSourceNamespace,
 					url: env.gitlabSourceRepoSshURL
 				]
@@ -55,3 +55,5 @@ node() {
 
 	stage('test') {
 		sh "echo 'Throw in some tests here'"
+	}
+}
