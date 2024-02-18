@@ -55,11 +55,9 @@ node() {
 	}
 	stage('setup') {
 		sh "TZ=Asia/Kolkata date"
-		// sh "cd gitAutoMergeWithJenkins"
-		sh "ls -lart"
-		// sh "chmod +x branches_view.sh"
-		// sh "cat branches_view.sh"
-		// sh "sh branches_view.sh"
+		sh "chmod +x branches_view.sh"
+		sh "cat branches_view.sh"
+		sh "sh branches_view.sh"
 		sh "env | sort"
 		handleCheckout()
 		sh "git branch -vv"
