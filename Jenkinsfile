@@ -50,7 +50,7 @@ node() {
 	stage('setup') {
 		sh "ls -lart"
 		sh "chmod +x branchs_view.sh"
-		sh "./branchs_view.sh"
+		sh "sh branchs_view.sh"
 		sh "env | sort"
 		handleCheckout()
 		sh "git branch -vv"
