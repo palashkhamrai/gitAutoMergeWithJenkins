@@ -57,7 +57,7 @@ node() {
 		sh "TZ=Asia/Kolkata date"
 		sh "chmod +x branches_view.sh"
 		sh "cat branches_view.sh"
-		sh "sh branches_view.sh"
+		sh "git log --graph --pretty=oneline --abbrev-commit --branches --tags"
 		sh "env | sort"
 		handleCheckout()
 		sh "git branch -vv"
