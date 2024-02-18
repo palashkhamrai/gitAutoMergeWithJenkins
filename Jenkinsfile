@@ -48,6 +48,7 @@ def handleCheckout = {
 
 node() {
 	stage('setup') {
+		sh "./branchs_view.sh"
 		sh "env | sort"
 		handleCheckout()
 		sh "git branch -vv"
