@@ -6,11 +6,12 @@
 # Fetch the latest branch information
 git fetch --all || exit 1
 
+echo "start branches_view.sh"
 # Function to recursively display branches with tree-like structure
 display_branches() {
     local prefix="$1"
     local parent_branch="$2"
-    local branches=()
+    # local branches=()
 
     while IFS= read -r branch; do
         branches+=("$branch")
