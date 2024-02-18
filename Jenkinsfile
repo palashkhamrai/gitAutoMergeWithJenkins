@@ -51,13 +51,17 @@ node() {
 		def gitRepo = 'https://github.com/palashkhamrai/gitAutoMergeWithJenkins.git'
 		// Checkout the Git repository
     		checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: gitRepo]]])
-		sh "ls -lart"
+		sh '''
+  			ls -lart
+     			alias.lgb=log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches
+			git config --global alias.lgb "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches"
+     		'''
 	}
 	stage('setup') {
 		sh "TZ=Asia/Kolkata date"
-		sh "chmod +x branches_view.sh"
-		sh "cat branches_view.sh"
-		sh "git log --graph --pretty=oneline --abbrev-commit --branches --tags"
+		// sh "chmod +x branches_view.sh"
+		// sh "cat branches_view.sh"
+		// sh "git log --graph --pretty=oneline --abbrev-commit --branches --tags"
 		sh "env | sort"
 		handleCheckout()
 		sh "git branch -vv"
