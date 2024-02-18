@@ -51,6 +51,7 @@ node() {
 		def gitRepo = 'https://github.com/palashkhamrai/gitAutoMergeWithJenkins.git'
 		// Checkout the Git repository
     		checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: gitRepo]]])
+		sh "ls -lart"
 	}
 	stage('setup') {
 		sh "TZ=Asia/Kolkata date"
