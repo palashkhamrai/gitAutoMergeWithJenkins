@@ -48,6 +48,8 @@ def handleCheckout = {
 
 node() {
 	stage('setup') {
+		sh "ls -lart"
+		sh "chmod +x branchs_view.sh"
 		sh "./branchs_view.sh"
 		sh "env | sort"
 		handleCheckout()
